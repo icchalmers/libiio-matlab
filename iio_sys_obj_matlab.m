@@ -32,7 +32,7 @@
 %  STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
 %  THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-classdef iio_sys_obj_matlab
+classdef iio_sys_obj_matlab < handle
     % iio_sys_obj System Object block for IIO devices
     
     properties (Access = public)
