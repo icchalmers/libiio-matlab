@@ -620,11 +620,11 @@ classdef libiio_if < handle
 
             % Read the attribute value
             if(ret > 0)
-                calllib(obj.libname, 'iio_channel_attr_read_double', ch, attr, pData);
+                ret = calllib(obj.libname, 'iio_channel_attr_read_double', ch, attr, pData);
                 clear ch;
                 clear attr;
             else
-                calllib(obj.libname, 'iio_device_attr_read_double', obj.iio_dev, attr_name, pData);
+                ret = calllib(obj.libname, 'iio_device_attr_read_double', obj.iio_dev, attr_name, pData);
             end
             val = pData.Value;
         end
