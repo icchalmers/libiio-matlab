@@ -64,7 +64,7 @@ classdef iio_sys_obj_matlab < handle
         iio_dev_cfg = [];
     end
     
-    properties (Access = private)
+    properties (Access = protected)
         % Private class properties.
         
         %libiio_data_in_dev libiio IIO interface object for the input data device
