@@ -308,7 +308,10 @@ classdef iio_sys_obj_matlab < handle
                             obj.str_cfg_in(i,j+1) = 0;
                             str = char(obj.str_cfg_in(i,:));
                         end
-                        writeAttributeString(obj.iio_dev_cfg.cfg_ch(i).ctrl_dev, obj.iio_dev_cfg.cfg_ch(i).port_attr, str);
+                        ret = writeAttributeString(obj.iio_dev_cfg.cfg_ch(i).ctrl_dev, obj.iio_dev_cfg.cfg_ch(i).port_attr, str);
+                        if(ret < 0)
+                            error('Failed to write %s to %s\n', str, obj.iio_dev_cfg.cfg_ch(i).port_attr);
+                        end
                     end
                 end
             end
