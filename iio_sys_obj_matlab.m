@@ -208,7 +208,7 @@ classdef iio_sys_obj_matlab < handle
             end
             
             % Initialize discrete-state properties.
-            obj.num_cfg_in = zeros(1, length(obj.iio_dev_cfg.cfg_ch));
+            obj.num_cfg_in = nan(1, length(obj.iio_dev_cfg.cfg_ch));
             obj.str_cfg_in = zeros(length(obj.iio_dev_cfg.cfg_ch), 64);
             
             % Initialize the libiio data input device
